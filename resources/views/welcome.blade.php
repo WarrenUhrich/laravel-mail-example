@@ -61,6 +61,21 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .links .button {
+                font-size: 1rem;
+                display: inline-block;
+                padding: 0.75rem 1.25rem;
+                border: 1px solid #636b6f;
+                transition: 0.1s linear all;
+            }
+
+            .links .button:hover,
+            .links .button:focus,
+            .links .button:active {
+                color: #fff;
+                background: #636b6f;
+            }
         </style>
     </head>
     <body>
@@ -84,7 +99,7 @@
                     Laravel
                 </div>
 
-                <div class="links">
+                <div class="links m-b-md">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
@@ -93,6 +108,18 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+
+                @if ( $mailsent = session()->get( 'mail_sent' ) )
+                    <div class="alert">
+                        <p>
+                            {{ $mailsent }}
+                        </p>
+                    </div>
+                @endif
+
+                <div class="links">
+                    <a class="button" href="send-mail">Send Mail</a>
                 </div>
             </div>
         </div>

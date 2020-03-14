@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get( '/send-mail', function () {
+    // Send mail. // REMEMBER TO ADD MAIL INFO TO YOUR .env FILE!
+    Mail::to( 'recipient@example.com' )
+        ->send( new App\Mail\WelcomeMail() );
+    // Redirect user.
+    return redirect( '/' )
+           ->with( 'mail_sent', 'Mail sent.' );
+} );
