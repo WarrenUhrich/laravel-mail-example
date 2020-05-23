@@ -119,7 +119,7 @@
                 @endif
 
                 <div class="links">
-                    <a class="button" href="send-mail">Send Mail</a>
+                    <a class="button" href="send-mail">Click to Send Mail</a>
                 </div>
             </div>
         </div>
